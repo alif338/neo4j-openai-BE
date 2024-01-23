@@ -66,8 +66,32 @@ const read = async (req: Request, res: Response) => {
   );
 };
 
+const generateCompletion = async (req: Request, res: Response) => {
+
+  const sendResponse = await domain.generateCompletion(req.body.prompts);
+
+  if (sendResponse.err) {
+    return wrapper.response(
+      res,
+      400,
+      false,
+      "error when generate prompts",
+      sendResponse.err
+    );
+  }
+
+  return wrapper.response(
+    res,
+    201,
+    true,
+    "read data success",
+    sendResponse.data
+  );
+}
+
 export default {
   index,
   create,
   read,
+  generateCompletion
 };

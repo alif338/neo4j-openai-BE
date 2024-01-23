@@ -7,5 +7,6 @@ const router = Router();
 router.get("/", exampleHandler.index);
 router.post("/create", exampleValidator.create, exampleHandler.create);
 router.get("/read", exampleValidator.read, exampleHandler.read);
+router.post("/generateCompletion", exampleValidator.generateCompletion, exampleHandler.generateCompletion)
 
 export default router;

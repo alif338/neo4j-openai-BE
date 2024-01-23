@@ -11,7 +11,12 @@ const read = [
   query("page").default(1),
 ];
 
+const generateCompletion = [
+  body("prompts").notEmpty()
+]
+
 export default {
   create,
-  read
+  read,
+  generateCompletion
 };

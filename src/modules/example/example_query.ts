@@ -8,21 +8,28 @@ class Query {
     this.db = db;
   }
 
-  async read(search: string = "", limit: number, offset: number) {
+  async read() {
     const cql = `
-        MATCH (p:Person)
-        WHERE p.name CONTAINS $search
-        return p.name, p.age
-        skip $offset
-        limit $limit;
+        Match (p) return p;
     `;
 
-    const params = { search, limit: int(limit), offset: int(offset) };
     try {
-      const result = await this.db.execute(cql, params);
+      const result = await this.db.execute(cql);
       return wrapper.data(result.records);
     } catch (error) {
-      console.error(error);
+      return wrapper.error(error);
+    }
+  }
+
+  async readRelationships() {
+    const cql = `
+      match ()-[r]->() return r
+    `;
+
+    try {
+      const result = await this.db.execute(cql);
+      return wrapper.data(result.records);
+    } catch (error) {
       return wrapper.error(error);
     }
   }
