@@ -1,5 +1,6 @@
-
 # Knowledge Graph Backend with Language Model and Neo4j
+
+GitHub Repo: https://github.com/alif338/neo4j-openai-BE
 
 ## Overview
 This backend application, built with Node.js and Express, serves as the API for knowledge graph data retrieval, integrates a Language Model for prediction, and uses Neo4j as the database.
