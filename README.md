@@ -27,3 +27,9 @@ This backend application, built with Node.js and Express, serves as the API for 
 ## Running the Application
 ```bash
 npm run dev
+```
+Use this endpoint to generate JSON response of Neo4j
+```bash
+(POST) {{baseUrl}}/api/v1/generateCompletion
+body: prompts (list of string)
+```
