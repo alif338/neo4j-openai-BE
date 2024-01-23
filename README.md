@@ -10,20 +10,20 @@ This backend application, built with Node.js and Express, serves as the API for 
 - Neo4j database management.
 
 ## Prerequisites
-- Node.js installed on your machine.
-- Neo4j database installed and running.
-- Knowledge graph data imported into Neo4j.
+- Node.js installed on your machine (v18.x or later).
+- Neo4j database installed and running (Neo4j Desktop).
+- Knowledge graph data imported into Neo4j (Cypher Query Language).
 
 ## Installation
-1. Clone the repository: `git clone [repository_url]`
-2. Navigate to the backend directory: `cd backend`
+1. Clone the repository: `git clone https://github.com/alif338/neo4j-openai-BE.git`
+2. Navigate to the backend directory: `cd neo4j-openai-BE`
 3. Install dependencies: `npm install`
 
 ## Configuration
-1. Open `config.js`.
-2. Update Neo4j credentials and connection details.
-3. Configure the Language Model integration.
+1. Set `.env` file, refer from `.env.example`
+2. Update `NEO4J_*` based on running database at your local computer
+3. Configure the Language Model integration credentials. In this project, implements OpenAI from Azure.
 
 ## Running the Application
 ```bash
-npm start
+npm run dev
